@@ -1,0 +1,12 @@
+<ul>
+    <li class="parent" *ngFor="let dir of directories">
+        <div><input type="checkbox" [checked]="dir.checked" (click)="dir.check()"    /></div>
+        <div (click)="dir.toggle()">{{ dir.name }}</div>
+        <div *ngIf="dir.expanded">
+            <ul>
+                <li class="child" *ngFor="let file of dir.files">{{file}}</li>
+            </ul>
+            <app-tree-view [directories]="dir.directories"></app-tree-view>
+        </div>
+    </li>
+</ul>
