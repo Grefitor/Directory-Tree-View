@@ -1,17 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Directory } from '../models/directory.model';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Directory } from "../models/directory.model";
 
 @Component({
-  selector: 'app-tree-view',
-  templateUrl: './tree-view.component.html',
-  styleUrls: ['./tree-view.component.css']
+  selector: "app-tree-view",
+  templateUrl: "./tree-view.component.html",
+  styleUrls: ["./tree-view.component.css"]
 })
 export class TreeViewComponent implements OnInit {
-
   @Input() directories: Array<Directory>;
-  constructor() { }
+  @Output() childChanged = new EventEmitter();
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  checked(index: number) {
+    this.directories[index].check();
   }
-
 }

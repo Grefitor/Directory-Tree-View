@@ -1,7 +1,7 @@
 <ul>
-    <li class="parent" *ngFor="let dir of directories">
-        <div><input type="checkbox" [checked]="dir.checked" (click)="dir.check()"    /></div>
-        <div (click)="dir.toggle()">{{ dir.name }}</div>
+    <li class="parent" *ngFor="let dir of directories; let i= index">
+        <div><input type="checkbox" [checked]="dir.checked" (click)="checked(i)"    /></div>
+        <div (click)="dir.toggle()">{{ dir.name }} <i class="material-icons"></i> </div>
         <div *ngIf="dir.expanded">
             <ul>
                 <li class="child" *ngFor="let file of dir.files">{{file}}</li>
@@ -10,3 +10,5 @@
         </div>
     </li>
 </ul>
+
+

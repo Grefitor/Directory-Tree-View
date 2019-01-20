@@ -4,17 +4,18 @@ export class Directory {
   name: string;
   directories: Array<Directory>;
   files: Array<any>;
-  expanded: boolean;
-  checked: boolean;
+  expanded: boolean = false;
+  checked: boolean = false;
 
-  constructor(
-      name?: string,
-      directories?: Array<Directory>,
-      files?: Array<any>
+  constructor(data:{
+    name?: string,
+    directories?: Array<Directory>,
+    files?: Array<any>
+  } = {}
     ) {
-      this.name = name;
-      this.directories = directories || [];
-      this.files = files || [];
+      this.name = data.name;
+      this.directories = data.directories || [];
+      this.files = data.files || [];
   }
 
   toggle() {

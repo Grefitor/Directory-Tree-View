@@ -3,15 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {TreeViewComponent} from './tree-view/tree-view.component';
+import {MatButtonModule, MatCardModule} from '@angular/material';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    TreeViewComponent
-  ],
+  declarations: [AppComponent, TreeViewComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatButtonModule,
+    MatCardModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
